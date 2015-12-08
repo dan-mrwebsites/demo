@@ -11,11 +11,11 @@
     <script src="kendo/js/jquery.min.js"></script>
     <script src="kendo/js/kendo.mobile.min.js"></script>
     <script src="app.js"></script>
+	<script src="scripts/eventhandlers.js"></script>
 </head>
 
 <body id="kendoUiMobileApp">
-    <script src="components/home/index.js"></script>
-    <div data-role="layout" data-id="main">
+    <div data-role="layout" data-id="layoutMain">
         <header data-role="header">
             <div data-role="navbar">
                 <span data-role="view-title"></span>
@@ -26,27 +26,28 @@
 
         <footer data-role="footer">
             <div data-role="tabstrip" id="navigation-container">
-                <a href="components/home/view.html" data-icon="home">Home View</a>
+                <a href="views/viewFirst.html" data-icon="home">First View</a>
+				<a href="views/viewSecond.html" data-icon="organize">Second View</a>
+				<a href="views/viewThird.html" data-icon="featured">Third View</a>
             </div>
         </footer>
     </div>
-
-    <div data-role="layout" data-id="main-nonav">
+	
+	<div data-role="layout" data-id="layoutSub">
         <header data-role="header">
-            <div data-role="navbar">
-                <span data-role="view-title"></span>
-            </div>
+            
         </header>
 
         <!-- application views will be rendered here -->
 
         <footer data-role="footer">
+            <div data-role="tabstrip" id="navigation-container">
+                <a href="views/viewFirst.html" data-icon="home">First View</a>
+				<a href="views/viewSecond.html" data-icon="organize">Second View</a>
+				<a href="views/viewThird.html" data-icon="featured">Third View</a>
+            </div>
         </footer>
     </div>
-    <!-- START_CUSTOM_CODE_kendoUiMobileApp -->
-    <!-- Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes -->
-
-    <!-- END_CUSTOM_CODE_kendoUiMobileApp -->
 </body>
 
 </html>

@@ -1,63 +1,39 @@
-'use strict';
+var app;
 
 (function() {
-    var app = {
-        data: {}
-    };
+    
+	window.APP = {
+		dataSources : {
+			dsDistricts: new kendo.data.DataSource({
+				offlineStorage: "dsDistricts_offline",
+				transport: { 
+					read: {
+						type: "GET",
+						url: "http://riggertalk.com/ajax/get_districts.php?type=services",
+						dataType: "json",
+						timeout: 10000
+					}
+				},
+				error: function(e) {
+					console.log(e);
+				},
+				schema: { // enables the use of method get(DistrictID) to return data for a single district
+					model: { id: "DistrictID" }
+				}
+			})
+		}
+	};
+    
+	document.addEventListener('deviceready', function() {
+		if (navigator && navigator.splashscreen) {
+			navigator.splashscreen.hide();
+		}
 
-    var bootstrap = function() {
-        $(function() {
-            app.mobileApp = new kendo.mobile.Application(document.body, {
-                transition: 'slide',
-                skin: 'flat',
-                initial: 'components/home/view.html'
-            });
-        });
-    };
-
-    if (window.cordova) {
-        document.addEventListener('deviceready', function() {
-            if (navigator && navigator.splashscreen) {
-                navigator.splashscreen.hide();
-            }
-
-            var element = document.getElementById('appDrawer');
-            if (typeof(element) != 'undefined' && element !== null) {
-                if (window.navigator.msPointerEnabled) {
-                    $('#navigation-container').on('MSPointerDown', 'a', function(event) {
-                        app.keepActiveState($(this));
-                    });
-                } else {
-                    $('#navigation-container').on('touchstart', 'a', function(event) {
-                        app.keepActiveState($(this));
-                    });
-                }
-            }
-
-            bootstrap();
-        }, false);
-    } else {
-        bootstrap();
-    }
-
-    app.keepActiveState = function _keepActiveState(item) {
-        var currentItem = item;
-        $('#navigation-container li a.active').removeClass('active');
-        currentItem.addClass('active');
-    };
-
-    window.app = app;
-
-    app.isOnline = function() {
-        if (!navigator || !navigator.connection) {
-            return true;
-        } else {
-            return navigator.connection.type !== 'none';
-        }
-    };
+		app = new kendo.mobile.Application(document.body, {
+			transition: 'slide',
+			initial: 'views/viewFirst.html'
+		});
+		
+		//console.log(app);
+	}, false);
 }());
-
-// START_CUSTOM_CODE_kendoUiMobileApp
-// Add custom code here. For more information about custom code, see http://docs.telerik.com/platform/screenbuilder/troubleshooting/how-to-keep-custom-code-changes
-
-// END_CUSTOM_CODE_kendoUiMobileApp

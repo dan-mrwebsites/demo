@@ -1,0 +1,10 @@
+<div data-role="view" id="viewSecond" data-layout="layoutSub" data-title="Second View Title">
+	<ul id="listDistricts" data-role="listview" data-source="APP.dataSources.dsDistricts" data-template="listDistrictTemplate"></ul>
+	
+	<script id="listDistrictTemplate" type="text/x-kendo-template">
+		<a href="views/viewThird.html?DistrictID=#: DistrictID #">
+			<span>#: DistrictName #</span>
+			<span>#: DistrictLatitude + ', ' + DistrictLongitude #</span>
+		</a>
+	</script>
+</div>
