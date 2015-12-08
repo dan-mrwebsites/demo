@@ -1,0 +1,45 @@
+{
+  "ProjectName": "Dan demo",
+  "ProjectGuid": "2292c3bc-d748-48c2-8f7d-896acf1ee348",
+  "projectVersion": 1,
+  "AppIdentifier": "com.telerik.Dandemo",
+  "DisplayName": "Dan demo",
+  "Author": "",
+  "Description": "Dan demo",
+  "BundleVersion": "1.0",
+  "AndroidVersionCode": "1",
+  "iOSDeviceFamily": [
+    "1",
+    "2"
+  ],
+  "iOSBackgroundMode": [],
+  "ProjectTypeGuids": "{070BCB52-5A75-4F8C-A973-144AF0EAFCC9}",
+  "FrameworkVersion": "3.7.0",
+  "AndroidPermissions": [
+    "android.permission.INTERNET"
+  ],
+  "DeviceOrientations": [
+    "Portrait",
+    "Landscape"
+  ],
+  "AndroidHardwareAcceleration": "false",
+  "iOSStatusBarStyle": "Default",
+  "Framework": "Cordova",
+  "WP8TileTitle": "",
+  "WP8Publisher": "",
+  "WP8Capabilities": [
+    "ID_CAP_NETWORKING",
+    "ID_CAP_WEBBROWSERCOMPONENT"
+  ],
+  "WP8Requirements": [],
+  "WP8PublisherID": "{e9ff8f3b-ad8c-4bb6-8d29-df6930ef33ed}",
+  "WP8ProductID": "{409af4e7-472c-45e9-ad7e-4b8b77c69ef3}",
+  "WPSdk": "8.0",
+  "WP8PackageIdentityName": "1234Telerik.Dandemo",
+  "WP8WindowsPublisherName": "CN=Telerik",
+  "WP8SupportedResolutions": [
+    "ID_RESOLUTION_WVGA",
+    "ID_RESOLUTION_WXGA",
+    "ID_RESOLUTION_HD720P"
+  ]
+}
